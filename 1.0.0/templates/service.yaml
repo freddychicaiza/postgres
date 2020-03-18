@@ -1,17 +1,16 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Values.nameOverride }}
+  name: {{ include "postgres.fullname" . }}
+  labels:
+    {{- include "postgres.labels" . | nindent 4 }}
 spec:
-  selector:
-    app: {{ .Values.nameOverride }}
-  ports:
-  - name: {{ .Values.nameOverride }}
-    nodePort: {{ .Values.service.nodePortNumber }}
-    port: {{ .Values.service.port }}
-    protocol: TCP
-    targetPort: {{ .Values.service.port }}
-  sessionAffinity: None
   type: {{ .Values.service.type }}
-status:
-  loadBalancer: {}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+      nodePort: {{ .Values.service.nodePortNumber }}
+  selector:
+    {{- include "postgres.selectorLabels" . | nindent 4 }}
