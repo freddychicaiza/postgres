@@ -30,6 +30,9 @@ spec:
           env:
             - name: POSTGRES_PASSWORD
               value: {{ default "" .Values.POSTGRES_PASSWORD | quote }}
+          volumeMounts:
+            - mountPath: {{ .Values.volumen.podRoute }}
+              name: "v-{{ .Values.nameOverride }}"
           ports:
             - name: {{ .Values.nameOverride }}
               containerPort: {{ .Values.service.port }}
@@ -48,3 +51,7 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
     {{- end }}
+      volumes:
+        - name: "v-{{ .Values.nameOverride }}"
+          persistentVolumeClaim:
+            claimName: "v-{{ .Values.nameOverride }}"

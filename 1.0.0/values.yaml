@@ -34,7 +34,6 @@ securityContext: {}
 
 volume:
   spacePv: 10Gi
-  spaceVc: 10Gi
   physicalRoute: /var/postgres
   podRoute: /var/lib/postgresql/data
 
