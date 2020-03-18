@@ -28,8 +28,6 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
-            - name: POSTGRES_DB
-              value: {{ default "" .Values.POSTGRES_DB | quote }}
             - name: POSTGRES_PASSWORD
               value: {{ default "" .Values.POSTGRES_PASSWORD | quote }}
           ports:

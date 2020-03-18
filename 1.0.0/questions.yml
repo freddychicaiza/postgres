@@ -2,15 +2,9 @@ categories:
     - Database
     - Postgres
 questions:
-- variable: POSTGRES_DB
-  description: "Nombre base de datos"
-  type: string
-  required: true
-  label: Postgres Database Name
-  group: "Postgres Settings"
 - variable: POSTGRES_PASSWORD
   description: "Contraseña Postgres"
-  type: string
+  type: password
   required: true
   label: Postgres Database Password
   group: "Postgres Settings"
