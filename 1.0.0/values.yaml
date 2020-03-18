@@ -32,10 +32,11 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
-#service:
-#  type: NodePort
-#  port: 5432
-#  nodePortNumber: 31667
+volume:
+  spacePv: 1OGi
+  spaceVc: 10Gi
+  physicalRoute: /var/postgres
+  podRoute: /var/lib/postgresql/data
 
 service:
   type: NodePort

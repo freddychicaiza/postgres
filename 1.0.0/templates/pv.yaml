@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  annotations:
+  creationTimestamp: null
+  finalizers:
+  - kubernetes.io/pv-protection
+  name: "pv-{{ .Values.nameOverride }}"
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: {{ .Values.volume.spacePv }}
+  hostPath:
+    path: {{ .Values.volume.physicalRoute }}
+    type: DirectoryOrCreate
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: hostname
+          operator: In
+          values: 10.200.101.207
+  persistentVolumeReclaimPolicy: Retain
+  volumeMode: Filesystem
+status: {}
