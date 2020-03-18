@@ -31,7 +31,7 @@ spec:
             - name: POSTGRES_PASSWORD
               value: {{ default "" .Values.POSTGRES_PASSWORD | quote }}
           volumeMounts:
-            - mountPath: {{ .Values.volumen.podRoute }}
+            - mountPath: {{ .Values.volume.podRoute }}
               name: "v-{{ .Values.nameOverride }}"
           ports:
             - name: {{ .Values.nameOverride }}
