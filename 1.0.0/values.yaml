@@ -33,7 +33,7 @@ securityContext: {}
   # runAsUser: 1000
 
 volume:
-  spacePv: 1OGi
+  spacePv: 10Gi
   spaceVc: 10Gi
   physicalRoute: /var/postgres
   podRoute: /var/lib/postgresql/data
