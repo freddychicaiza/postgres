@@ -18,9 +18,10 @@ spec:
     required:
       nodeSelectorTerms:
       - matchExpressions:
-        - key: hostname
+        - key: kubernetes.io/hostname
           operator: In
-          values: 10.200.101.207
+          values: 
+            - 10.200.101.207
   persistentVolumeReclaimPolicy: Retain
   volumeMode: Filesystem
 status: {}
