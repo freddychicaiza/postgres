@@ -35,8 +35,6 @@ spec:
         imagePullPolicy: Always
         name: {{ .Values.nameOverride }}
         env:
-          - name: POSTGRES_DB
-            value: {{ default "" .Values.POSTGRES_DB | quote }}
           - name: POSTGRES_PASSWORD
             value: {{ default "" .Values.POSTGRES_PASSWORD | quote }}
         ports:
