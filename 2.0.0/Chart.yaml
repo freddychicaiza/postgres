@@ -3,7 +3,7 @@ name: postgres
 description: A Helm chart for Kubernetes Postgres
 type: application
 
-version: 1.0.0
+version: 2.0.0
 
 appVersion: 12.2
 
