@@ -7,7 +7,7 @@ metadata:
   creationTimestamp: null
   finalizers:
   - kubernetes.io/pvc-protection
-  name: "{{ .Values.nameOverride }}pvc"
+  name: "v-{{ .Values.nameOverride }}"
 spec:
   accessModes:
   - ReadWriteOnce
@@ -16,5 +16,5 @@ spec:
       storage: {{ .Values.volumenes.espaciopvc }}
   storageClassName: ""
   volumeMode: Filesystem
-  volumeName: "{{ .Values.nameOverride }}pv"
+  volumeName: "pv-{{ .Values.nameOverride }}"
 status: {}

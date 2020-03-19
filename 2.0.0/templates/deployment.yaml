@@ -37,12 +37,8 @@ spec:
         env:
           - name: POSTGRES_DB
             value: {{ default "" .Values.POSTGRES_DB | quote }}
-          - name: POSTGRES_USER
-            value: {{ default "" .Values.POSTGRES_USER | quote }}
           - name: POSTGRES_PASSWORD
             value: {{ default "" .Values.POSTGRES_PASSWORD | quote }}
-          - name: POSTGRES_ENCODING
-            value: {{ default "" .Values.POSTGRES_ENCODING | quote }}            
         ports:
         - containerPort: {{ .Values.service.port }}
           name: {{ .Values.nameOverride }}
@@ -60,14 +56,14 @@ spec:
         tty: true
         volumeMounts:
         - mountPath: {{ .Values.volumenes.rutaMontaje }}
-          name: "{{ .Values.nameOverride }}pvc"
+          name: "v-{{ .Values.nameOverride }}"
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30
       volumes:
-      - name: "{{ .Values.nameOverride }}pvc"
+      - name: "vol01"
         persistentVolumeClaim:
-          claimName: "{{ .Values.nameOverride }}pvc"
+          claimName: "v-{{ .Values.nameOverride }}"
 status: {}

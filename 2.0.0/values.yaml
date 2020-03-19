@@ -4,7 +4,6 @@
 
 replicaCount: 1
 
-# La imagen puede tener la opcion IfNotPresent o Always
 image:
   repository: postgres
   pullPolicy: Always
@@ -12,10 +11,6 @@ image:
 imagePullSecrets: []
 nameOverride: postgres
 fullnameOverride: ""
-
-# variable para seleccionar node en el cual se ejecute cicd - atlassian
-aplicaciones: atlassian
-propietario: jjuma
 
 # Opciones del los volumenes en el servidor
 volumenes:
