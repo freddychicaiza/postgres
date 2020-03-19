@@ -63,7 +63,7 @@ spec:
       securityContext: {}
       terminationGracePeriodSeconds: 30
       volumes:
-      - name: "vol01"
+      - name: "v-{{ .Values.nameOverride }}"
         persistentVolumeClaim:
           claimName: "v-{{ .Values.nameOverride }}"
 status: {}
