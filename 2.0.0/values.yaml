@@ -19,8 +19,8 @@ propietario: jjuma
 
 # Opciones del los volumenes en el servidor
 volumenes:
-  espaciopv: 1200Gi
-  espaciopvc: 1200Gi
+  espaciopv: 10Gi
+  espaciopvc: 10Gi
   ruta: /var/postgres
   rutaMontaje: /var/lib/postgresql/data
 
