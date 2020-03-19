@@ -1,0 +1,32 @@
+categories:
+    - Database
+    - Postgres
+questions:
+- variable: POSTGRES_DB
+  default: "bitbucketdb"
+  description: "Nombre de la base a crearse"
+  type: string
+  required: true
+  label: Postgres Database
+  group: "Postgres Settings"
+- variable: POSTGRES_USER
+  default: "jjuma"
+  description: "Nombre del usuario"
+  type: string
+  required: true
+  label: Postgres User
+  group: "Postgres Settings"
+- variable: POSTGRES_PASSWORD
+  default: "jjuma"
+  description: "Contraseña del usuario"
+  type: string
+  required: true
+  label: Postgres Password
+  group: "Postgres Settings"
+- variable: POSTGRES_ENCODING
+  default: "UTF8"
+  description: "Codificación"
+  type: string
+  required: true
+  label: Codificación Idioma
+  group: "Postgres Settings"

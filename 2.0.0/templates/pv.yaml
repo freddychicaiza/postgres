@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  annotations:
+  field.cattle.io/creatorId: {{ .Values.propietario }}
+  creationTimestamp: null
+  finalizers:
+  - kubernetes.io/pv-protection
+  name: "{{ .Values.nameOverride }}pv"
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: {{ .Values.volumenes.espaciopv }}
+  hostPath:
+    path: {{ .Values.volumenes.ruta }}
+    type: DirectoryOrCreate
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: aplicaciones
+          operator: In
+          values:
+          - {{ .Values.aplicaciones}}
+  persistentVolumeReclaimPolicy: Retain
+  volumeMode: Filesystem
+status: {}
