@@ -5,7 +5,7 @@ questions:
 - variable: POSTGRES_DB
   description: "Nombre Base de Datos"
   type: string
-  required: true
+  required: false
   label: Postgres Database
   group: "Postgres Settings"
 - variable: POSTGRES_PASSWORD
